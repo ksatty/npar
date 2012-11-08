@@ -2,14 +2,10 @@
     "name": "npar",
     "version": "0.0.1",
     "author": "Kah <hcasatti@gmail.com>",
-    "description": "Checkout Monitor",
+    "description": "NPar parallel process",
     "private": true,
     "main": "./lib/npar.js",
-    "scripts": {
-        "start": "node monitor"
-    },
     "dependencies": {
-        "winston": "*"
     },
     "engine": {
         "node": ">=0.8"

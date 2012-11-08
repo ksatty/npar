@@ -2,7 +2,7 @@ var npar = require(".."),
     vows = require("vows"),
     assert = require("assert");
 
-vows
+var v = vows
     .describe("NPar Tests")
     .addBatch({
         "Context": {
@@ -11,13 +11,13 @@ vows
 
                 npar({"name":"owner"})
                     .add(function(callback){
-                        callback("1");
+                        callback(null, "1");
                     })
                     .add(function(callback){
-                        callback("2");
+                        callback(null, "2");
                     })
                     .add(function(callback){
-                        callback("3");
+                        callback(null, "3");
                     })
                     .exec(function(err, data){
                         _self.callback(err, this);
@@ -34,13 +34,13 @@ vows
 
                 npar()
                     .add(function(callback){
-                        callback("1");
+                        callback(null, "1");
                     })
                     .add(function(callback){
-                        callback("2");
+                        callback(null, "2");
                     })
                     .add(function(callback){
-                        callback("3");
+                        callback(null, "3");
                     })
                     .exec(function(err, data){
                         _self.callback(err, this);
@@ -51,4 +51,10 @@ vows
                 assert.isUndefined(data.npar);
             }
         }
-    }).run();
+    });
+
+try {
+    v.export(module);
+} catch (e){
+    v.run();
+}
