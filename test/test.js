@@ -5,6 +5,18 @@ var npar = require(".."),
 var v = vows
     .describe("NPar Tests")
     .addBatch({
+        "No Processes": {
+            topic: function() {
+                var _self = this;
+
+                npar({"name":"owner"}).exec(function(err, data){
+                        _self.callback(err, this);
+                    });
+            },
+            "ok": function(err, data) {
+                assert.isNotNull(err);
+            }
+        },
         "Context": {
             topic: function() {
                 var _self = this;

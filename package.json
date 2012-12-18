@@ -1,10 +1,13 @@
 {
     "name": "npar",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "author": "Kah <hcasatti@gmail.com>",
     "description": "NPar parallel process",
     "private": true,
     "main": "./lib/npar.js",
+    "scripts": {
+        "test": "node test/test.js"
+    },
     "dependencies": {
     },
     "engine": {
